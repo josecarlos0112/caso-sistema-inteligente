@@ -5,6 +5,7 @@ import org.example.entorno.Entorno;
 import org.example.entidades.Organismos;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,13 +19,42 @@ public class Main {
         // Crear una nueva simulación
         user.crearNuevaSimulacion(entorno, organismos);
 
-        // Iniciar la simulación
-        user.iniciarSimulacion();
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner scanner = new Scanner(System.in);
 
-        // Pausar la simulación
-        user.pausarSimulacion();
+        // Mostrar el menú hasta que el usuario decida salir
+        boolean continuar = true;
+        while (continuar) {
+            System.out.println("=======================================");
+            System.out.println("¡Bienvenido a la Simulación de Ecosistema!");
+            System.out.println("=======================================");
+            System.out.println("1. Iniciar la simulación");
+            System.out.println("2. Pausar la simulación");
+            System.out.println("3. Obtener estadísticas de la simulación");
+            System.out.println("4. Salir");
+            System.out.print("Ingrese su opción: ");
 
-        // Obtener estadísticas de la simulación
-        user.obtenerEstadisticas();
+            int opcion = scanner.nextInt();
+
+            switch (opcion) {
+                case 1:
+                    user.iniciarSimulacion();
+                    break;
+                case 2:
+                    user.pausarSimulacion();
+                    break;
+                case 3:
+                    user.obtenerEstadisticas();
+                    break;
+                case 4:
+                    continuar = false;
+                    break;
+                default:
+                    System.out.println("Opción no válida. Por favor, intente de nuevo.");
+                    break;
+            }
+        }
+
+        scanner.close();
     }
 }
