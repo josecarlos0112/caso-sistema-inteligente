@@ -1,5 +1,7 @@
 package org.example.entidades;
 
+import org.example.entorno.Entorno;
+
 public class Animal extends Organismos {
 private String tipo;
     private String nombre;
@@ -62,4 +64,29 @@ private String tipo;
     private String idHabitatAnimalAnimal;
     private String idAlimentacionAnimalAnimalAnimal;
     private String idVacunaAnimalAnimalAnimal;
+
+    public Animal(String nombre, String tipo, String descripcion, String fecha, String lugar, String estado) {
+    super(nombre, tipo, descripcion, fecha, lugar, estado);
+    }
+
+    public void predar(Planta planta) {
+        if (planta.getSalud() > 0) {
+            planta.setSalud(planta.getSalud() - 1);
+            this.salud += 1; // The animal gains health
+        }
+    }
+    @Override
+    public void consumirRecurso(Entorno entorno) {
+        if (entorno.getRecursosDisponibles() > 0) {
+            entorno.setRecursosDisponibles(entorno.getRecursosDisponibles() - 2);
+        }
+    }
+    public void pollinate(Planta planta) {
+        planta.pollinate();
+    }
+
+    @Override
+    public void symbiosis(Organismos partner) {
+        super.symbiosis(partner);
+    }
 }

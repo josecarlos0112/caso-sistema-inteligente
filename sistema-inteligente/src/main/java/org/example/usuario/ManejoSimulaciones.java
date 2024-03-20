@@ -33,6 +33,7 @@ public class ManejoSimulaciones {
     public void obtenerEstadisticas() {
         if (this.simulacionActual != null) {
             this.simulacionActual.calcularEstadisticas();
+            this.simulacionActual.mostrarEstadisticas();
         }
     }
 }

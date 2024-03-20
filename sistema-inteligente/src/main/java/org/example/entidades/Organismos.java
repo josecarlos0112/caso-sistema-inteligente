@@ -1,5 +1,7 @@
 package org.example.entidades;
 
+import org.example.entorno.Entorno;
+
 public class Organismos {
     private String nombre;
     private String tipo;
@@ -12,6 +14,22 @@ public class Organismos {
     protected int salud;
     protected int edad;
     protected boolean estadoReproductivo;
+
+    public Organismos(String nombre, String tipo, String descripcion, String fecha, String lugar, String estado) {
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.descripcion = descripcion;
+        this.fecha = fecha;
+        this.lugar = lugar;
+        this.estado = estado;
+    }
+
+    public Organismos(int posicion, int salud, int edad, boolean estadoReproductivo) {
+        this.posicion = new Posicion(posicion, posicion);
+        this.salud = salud;
+        this.edad = edad;
+        this.estadoReproductivo = estadoReproductivo;
+    }
 
     public void mover() {
         int dx = (int) (Math.random() * 3) - 1; // Genera un número aleatorio entre -1 y 1
@@ -27,6 +45,13 @@ public class Organismos {
     public void reproducir() {
         this.estadoReproductivo = true;
     }
+
+    public void Organismo(Posicion posicion, int salud, int edad, boolean estadoReproductivo) {
+    this.posicion = posicion;
+    this.salud = salud;
+    this.edad = edad;
+    this.estadoReproductivo = estadoReproductivo;
+}
 
     public Organismos(String nombre) {
         this.nombre = nombre;
@@ -55,6 +80,19 @@ public class Organismos {
         System.out.println("Fecha: " + this.fecha);
         System.out.println("Lugar: " + this.lugar);
         System.out.println("Estado: " + this.estado);
+    }
+
+    public void consumirRecurso(Entorno entorno) {
+        if (entorno.getRecursosDisponibles() > 0) {
+            entorno.setRecursosDisponibles(entorno.getRecursosDisponibles() - 1);
+        }
+    }
+
+    public void symbiosis(Organismos partner) {
+        if (partner.getSalud() > 0) {
+            this.salud += 1; // Increase health due to symbiosis
+            partner.setSalud(partner.getSalud() + 1); // Increase partner's health due to symbiosis
+        }
     }
 
 
@@ -105,5 +143,13 @@ public class Organismos {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    protected int getSalud() {
+        return salud;
+    }
+
+    protected void setSalud(int i) {
+        this.salud = i;
     }
 }

@@ -15,6 +15,12 @@ public class Simulacion {
         this.pausado = false;
     }
 
+    public void mostrarEstadisticas() {
+        // Replace this with your own logic to calculate the statistics
+        System.out.println("Estadísticas de la simulación:");
+        System.out.println("Número de organismos: " + this.organismos.size());
+    }
+
     public void iniciar() {
         // Implementar la lógica para iniciar la simulación
     }
