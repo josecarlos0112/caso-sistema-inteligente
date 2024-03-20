@@ -6,6 +6,18 @@ import java.util.List;
 
 public class User {
     private ManejoSimulaciones manejoSimulaciones;
+    private String nombreUsuario;
+    private String contrasena;
+
+    public User(String nombreUsuario, String contrasena) {
+        this.nombreUsuario = nombreUsuario;
+        this.contrasena = contrasena;
+        this.manejoSimulaciones = new ManejoSimulaciones();
+    }
+
+    public boolean verificarCredenciales(String nombreUsuario, String contrasena) {
+        return this.nombreUsuario.equals(nombreUsuario) && this.contrasena.equals(contrasena);
+    }
 
     public User() {
         this.manejoSimulaciones = new ManejoSimulaciones();

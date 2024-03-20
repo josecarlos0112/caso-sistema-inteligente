@@ -2,6 +2,8 @@ package org.example.entorno;
 
 import org.example.entidades.Organismos;
 
+import java.util.Random;
+
 public class Entorno {
     private String clima;
     private String terreno;
@@ -41,4 +43,18 @@ public class Entorno {
         // Increase the population of the organism
 
     }
+
+    public void actualizar() {
+    // Randomly change the climate
+    String[] climas = {"Soleado", "Lluvioso", "Nublado", "Ventoso"};
+    this.clima = climas[new Random().nextInt(climas.length)];
+
+    // Decrease available resources
+    this.recursosDisponibles -= new Random().nextInt(10);  // Decrease by a random amount up to 10
+
+    // Ensure resources don't go below 0
+    if (this.recursosDisponibles < 0) {
+        this.recursosDisponibles = 0;
+    }
+}
 }
