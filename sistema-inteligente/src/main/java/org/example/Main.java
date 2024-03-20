@@ -25,7 +25,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         // Crear un animal y una planta
-        Animal animal = new Animal("León", "Carnívoro", "Grande y feroz", "01-01-2022", "África", "Saludable");
+        Animal animal = new Animal("León", "Carnívoro", "Grande y feroz", 21/03/2024, "África", "Saludable");
         Planta planta = new Planta("Roble", "Deciduo", "Sexual", "Fotosíntesis");
         organismos.add(animal);
         organismos.add(planta);
@@ -33,7 +33,7 @@ public class Main {
         // Mostrar el menú hasta que el usuario decida salir
         boolean continuar = true;
         while (continuar) {
-            System.out.println("=======================================");
+            System.out.println("\n=======================================");
             System.out.println("¡Bienvenido a la Simulación de Ecosistema!");
             System.out.println("=======================================");
             System.out.println("1. Iniciar la simulación");
@@ -52,7 +52,7 @@ public class Main {
 
             switch (opcion) {
                 case 1:
-                    System.out.print("Iniciando la simulación....");
+                    System.out.print("Iniciando la simulación....\n");
                     try {
                         Thread.sleep(1500); // Hacer que el hilo actual se detenga durante 1500 milisegundos
                     } catch (InterruptedException e) {
@@ -61,7 +61,7 @@ public class Main {
                     user.iniciarSimulacion();
                     break;
                 case 2:
-                    System.out.print("Pausando la simulación....");
+                    System.out.print("Pausando la simulación....\n");
                     try {
                         Thread.sleep(1500); // Hacer que el hilo actual se detenga durante 1500 milisegundos
                     } catch (InterruptedException e) {
@@ -70,9 +70,21 @@ public class Main {
                     user.pausarSimulacion();
                     break;
                 case 3:
+                    System.out.print("Obteniendo estadísticas de la simulación....\n");
+                    try {
+                        Thread.sleep(1500); // Hacer que el hilo actual se detenga durante 1500 milisegundos
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     user.obtenerEstadisticas();
                     break;
                 case 4:
+                    System.out.print("Reanudando la simulación....\n");
+                    try {
+                        Thread.sleep(1500); // Hacer que el hilo actual se detenga durante 1500 milisegundos
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     user.reanudarSimulacion();
                     break;
                 case 5:
@@ -81,23 +93,48 @@ public class Main {
                     }
                     break;
                 case 6:
+                    System.out.println("Simulando predación....");
+                    try {
+                        Thread.sleep(1500); // Hacer que el hilo actual se detenga durante 1500 milisegundos
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     animal.predar(planta);
                     System.out.println("Predación simulada");
                     break;
                 case 7:
+                    System.out.println("Simulando competencia por recursos....");
+                    try {
+                        Thread.sleep(1500); // Hacer que el hilo actual se detenga durante 1500 milisegundos
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     animal.consumirRecurso(entorno);
                     planta.consumirRecurso(entorno);
                     System.out.println("Competencia por recursos simulada");
                     break;
                 case 8:
+                    System.out.println("Simulando polinización....");
+                    try {
+                        Thread.sleep(1500); // Hacer que el hilo actual se detenga durante 1500 milisegundos
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     animal.pollinate(planta);
                     System.out.println("Polinización simulada");
                     break;
                 case 9:
+                    System.out.println("Simulando simbiosis....");
+                    try {
+                        Thread.sleep(1500); // Hacer que el hilo actual se detenga durante 1500 milisegundos
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                     animal.symbiosis(planta);
                     System.out.println("Simbiosis simulada");
                     break;
                 case 10:
+                    System.out.println("\n¡Gracias por usar la simulación de ecosistema!");
                     continuar = false;
                     break;
                 default:

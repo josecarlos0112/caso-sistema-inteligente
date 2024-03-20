@@ -159,4 +159,8 @@ public class Organismos {
     public void setSalud(int i) {
         this.salud = i;
     }
+
+    public void actualizar(Entorno entorno) {
+
+    }
 }

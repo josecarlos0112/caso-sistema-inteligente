@@ -65,8 +65,8 @@ private String tipo;
     private String idAlimentacionAnimalAnimalAnimal;
     private String idVacunaAnimalAnimalAnimal;
 
-    public Animal(String nombre, String tipo, String descripcion, String fecha, String lugar, String estado) {
-    super(nombre, tipo, descripcion, fecha, lugar, estado);
+    public Animal(String nombre, String tipo, String descripcion, int fecha, String lugar, String estado) {
+    super(nombre, tipo, descripcion, String.valueOf(fecha), lugar, estado);
     }
 
     public void predar(Planta planta) {

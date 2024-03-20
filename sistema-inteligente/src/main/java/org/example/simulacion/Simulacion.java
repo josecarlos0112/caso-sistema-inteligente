@@ -1,16 +1,17 @@
 package org.example.simulacion;
 
-import org.example.entorno.Entorno;
-import org.example.entidades.Organismos;
 import org.example.entidades.Animal;
+import org.example.entidades.Organismos;
 import org.example.entidades.Planta;
-// Add these import statements
+import org.example.entorno.Entorno;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
+
 import java.util.List;
+import java.util.Random;
 
 public class Simulacion {
     private Entorno entorno;
@@ -100,7 +101,7 @@ public class Simulacion {
     }
 
     if (new Random().nextInt(100) < 5) {
-        eventoAleatorio.invasionEspecie(entorno, organismos);
+        entorno.invasionEspecie(entorno, organismos);
     }
 
     // Remove any dead organisms
