@@ -1,5 +1,7 @@
 package org.example.entorno;
 
+import org.example.entidades.Organismos;
+
 public class Entorno {
     private String clima;
     private String terreno;
@@ -33,5 +35,10 @@ public class Entorno {
 
     public void setRecursosDisponibles(int recursosDisponibles) {
         this.recursosDisponibles = recursosDisponibles;
+    }
+
+    public void incrementarPoblacion(Class<? extends Organismos> aClass) {
+        // Increase the population of the organism
+
     }
 }

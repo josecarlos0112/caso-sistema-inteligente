@@ -95,6 +95,13 @@ public class Organismos {
         }
     }
 
+    public void reproducir(Entorno entorno) {
+        if (this.estadoReproductivo) {
+            // Increase the population of this species in the environment
+            entorno.incrementarPoblacion(this.getClass());
+        }
+    }
+
 
 
     public String getNombre() {
@@ -145,11 +152,11 @@ public class Organismos {
         this.estado = estado;
     }
 
-    protected int getSalud() {
+    public int getSalud() {
         return salud;
     }
 
-    protected void setSalud(int i) {
+    public void setSalud(int i) {
         this.salud = i;
     }
 }
