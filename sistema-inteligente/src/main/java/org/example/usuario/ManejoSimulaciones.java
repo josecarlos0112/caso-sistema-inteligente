@@ -19,7 +19,15 @@ public class ManejoSimulaciones {
     }
 
     public void pausarSimulacion() {
-        // Implementar la lógica para pausar la simulación
+        if (this.simulacionActual != null) {
+            this.simulacionActual.pausar();
+        }
+    }
+
+    public void reanudarSimulacion() {
+        if (this.simulacionActual != null) {
+            this.simulacionActual.reanudar();
+        }
     }
 
     public void obtenerEstadisticas() {

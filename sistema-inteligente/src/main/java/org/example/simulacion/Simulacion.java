@@ -7,21 +7,31 @@ import java.util.List;
 public class Simulacion {
     private Entorno entorno;
     private List<Organismos> organismos;
+    private boolean pausado;
 
     public Simulacion(Entorno entorno, List<Organismos> organismos) {
         this.entorno = entorno;
         this.organismos = organismos;
+        this.pausado = false;
     }
 
     public void iniciar() {
         // Implementar la lógica para iniciar la simulación
     }
 
-    public void actualizarEstado() {
-        // Implementar la lógica para actualizar el estado de la simulación
+    public void pausar() {
+        this.pausado = true;
+    }
+
+    public void reanudar() {
+        this.pausado = false;
     }
 
     public void calcularEstadisticas() {
-        // Implementar la lógica para calcular estadísticas sobre la salud del ecosistema y las tendencias poblacionales
+        // Implementar la lógica para calcular las estadísticas
+    }
+
+    public boolean estaPausado() {
+        return this.pausado;
     }
 }

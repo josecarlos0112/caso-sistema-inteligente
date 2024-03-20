@@ -48,6 +48,15 @@ public class Organismos {
         this.estado = "";
     }
 
+    public void mostrarInformacion() {
+        System.out.println("Nombre: " + this.nombre);
+        System.out.println("Tipo: " + this.tipo);
+        System.out.println("Descripción: " + this.descripcion);
+        System.out.println("Fecha: " + this.fecha);
+        System.out.println("Lugar: " + this.lugar);
+        System.out.println("Estado: " + this.estado);
+    }
+
 
 
     public String getNombre() {

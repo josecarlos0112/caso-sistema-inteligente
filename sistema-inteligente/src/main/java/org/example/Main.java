@@ -31,7 +31,9 @@ public class Main {
             System.out.println("1. Iniciar la simulación");
             System.out.println("2. Pausar la simulación");
             System.out.println("3. Obtener estadísticas de la simulación");
-            System.out.println("4. Salir");
+            System.out.println("4. Reanudar la simulación");
+            System.out.println("5. Ver información de los organismos");
+            System.out.println("6. Salir de la simulación");
             System.out.print("Ingrese su opción: ");
 
             int opcion = scanner.nextInt();
@@ -47,6 +49,14 @@ public class Main {
                     user.obtenerEstadisticas();
                     break;
                 case 4:
+                    user.reanudarSimulacion();
+                    break;
+                case 5:
+                    for (Organismos organismo : organismos) {
+                        organismo.mostrarInformacion();
+                    }
+                    break;
+                case 6:
                     continuar = false;
                     break;
                 default:

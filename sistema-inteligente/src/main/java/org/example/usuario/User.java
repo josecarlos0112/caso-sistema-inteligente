@@ -26,4 +26,8 @@ public class User {
     public void obtenerEstadisticas() {
         this.manejoSimulaciones.obtenerEstadisticas();
     }
+
+    public void reanudarSimulacion() {
+        this.manejoSimulaciones.reanudarSimulacion();
+    }
 }
