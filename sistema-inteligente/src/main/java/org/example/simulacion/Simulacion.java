@@ -51,20 +51,6 @@ public class Simulacion {
         this.pausado = false;
     }
 
-    public void calcularEstadisticas() {
-        int totalOrganismos = organismos.size();
-        int totalAnimales = (int) organismos.stream().filter(o -> o instanceof Animal).count();
-        int totalPlantas = (int) organismos.stream().filter(o -> o instanceof Planta).count();
-        double saludPromedio = organismos.stream().mapToInt(Organismos::getSalud).average().orElse(0.0);
-        int recursosDisponibles = entorno.getRecursosDisponibles();
-
-        System.out.println("Total de organismos: " + totalOrganismos);
-        System.out.println("Total de animales: " + totalAnimales);
-        System.out.println("Total de plantas: " + totalPlantas);
-        System.out.println("Salud promedio de los organismos: " + saludPromedio);
-        System.out.println("Recursos disponibles en el entorno: " + recursosDisponibles);
-    }
-
     public boolean estaPausado() {
         return this.pausado;
     }
